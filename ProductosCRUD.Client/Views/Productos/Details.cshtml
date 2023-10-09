@@ -1,35 +1,38 @@
 ﻿@model ProductosCRUD.Client.Models.Producto
 
-@{
-    ViewData["Title"] = "Details";
-}
 
+<div class=" card text-primary">
+    <div class=" card-header text-center ">
+        <h5>Producto</h5>
+    </div>   
+    <div class=" card-body ">
+        <dl class="row">
+            <dt class="col-sm-2 text-center text-dark">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+            
+            <dt class="col-sm-2 text-center text-dark">
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+          
+            <dt class="col-sm-2 text-center text-dark">
+                @Html.DisplayNameFor(model => model.Precio)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Precio)
+            </dd>
+            
+        </dl>
+    </div>
+    <div class=" card-footer text-center">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-warning btn-sm">Editar</a>
+        <a asp-action="Index" class=" btn btn-outline-success btn-sm">volver a la lista</a>
+    </div>   
+</div>
 
-<div>
-    <h4>Producto</h4>
-    <hr />
-    <dl class="row">        
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-warning">Editar</a>    
-    <a asp-action="Index" class = " btn btn-success">volver a la lista</a>
-</div>
